@@ -29,12 +29,31 @@ html {
 
 body {
   font-family: $font-primary;
-  color: $color-grey-dark-2;
+  //color: $color-grey-dark-2;
   font-weight: 300;
   line-height: 1.6;
 }
 
 .container {
   display: grid;
+
+  // rows
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // No need for media query with this responsive rows
+
+  // columns
+
+  //The minmax(min,max ) CSS function defines a size range greater than or equal to min and less than or equal to max. It is used with CSS Grids.
+
+  // don't get confused by the naming convention these are just arbitrary names we can name them monkey-start or monkey-end if we want :D
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  // Container and all the direct children
+  // only for development purpose
+  & > * {
+    padding: 40px;
+    font-size: 3rem;
+  }
 }
