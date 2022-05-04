@@ -25,4 +25,14 @@
     height: 2px;
     width: 4.5rem;
   }
+
+  // to move one up
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+
+  // to move one down
+  &::after {
+    transform: translateY(1.3rem);
+  }
 }
