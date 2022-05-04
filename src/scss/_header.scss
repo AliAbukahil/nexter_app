@@ -29,12 +29,35 @@
     justify-self: start;
   }
 
+  // As Seen on with the two lines in the side
   &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center; // Y Axis |
+    column-gap: 1.5rem;
+
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; // === $color-grey-light-2;
+    }
   }
 
   &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    justify-items: center; // X Axis ––––
+
     img {
       height: 2.5rem;
+      // to kill the whiteness of the logos
+      filter: brightness(70%);
     }
   }
 }
