@@ -14,9 +14,11 @@ $color-grey-dark-2: #6d5d4b;
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
 
-// Media Queries Responsive Breakpoints
+// Media Queries [ Responsive Breakpoints ]
 $bp-largest: 75em; // 1200px / 16px <===FontSize = 75em
 $bp-large: 62.5em; // 1000px / 16px <===FontSize = 62.5em
+$bp-medium: 50em; // 800px / 16px <===FontSize = 50em
+$bp-small: 37.5em; // 6600px / 16px <===FontSize = 37.5em
 
 *,
 *::before,
@@ -64,6 +66,15 @@ body {
       [full-start] minmax(6rem, 1fr)
       [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
       [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    // 6rem sideBar calc(100vh - 6rem) header min-content realtors min-content features min-content story etc...
+    /*  grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(
+        3,
+        min-content
+      ); */
+    grid-template-rows: 6rem calc(100vh - 6rem);
   }
 
   // & > * Container and all the direct children
