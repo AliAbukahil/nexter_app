@@ -6,6 +6,13 @@
   // Part of designing Hamburger Menu
   display: flex;
   justify-content: center; // Axis x ––
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end; // Axis X –––
+    align-items: center; // Axis Y |
+  }
 }
 
 // Designing the three lines of the Hamburger menu
@@ -35,5 +42,20 @@
   // to move one down
   &::after {
     transform: translateY(1.3rem);
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+
+    // to move one up
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+
+    // to move one down
+    &::after {
+      transform: translateY(1rem);
+    }
   }
 }
